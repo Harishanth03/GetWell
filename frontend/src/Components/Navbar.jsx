@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   return (
 
-    <div>
+    <div className='flex items-center justify-between text-sm py-4 mb-4 border-b border-b-gray-400'>
 
         <img src={assets.logo} alt="" />
 
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div>
 
             <button>Create Account</button>
-            
+
         </div>
 
     </div>
