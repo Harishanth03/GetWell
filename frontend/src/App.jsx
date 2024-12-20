@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Myprofile from './Pages/Myprofile'
 import MyAppointment from './Pages/MyAppointment'
+import Appointment from './Pages/Appointment'
 
 const App = () => {
 
@@ -31,6 +32,8 @@ const App = () => {
         <Route path='/my-profile' element={<Myprofile/>}/>
 
         <Route path='/my-appointments' element={<MyAppointment/>}/>
+
+        <Route path='/appointment/:docId' element={<Appointment/>}/>
 
       </Routes>
 
