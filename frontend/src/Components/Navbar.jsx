@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
     const navigate = useNavigate();
+
+    const [showMenu, setShowMenu] = useState(false);
+
+    const [token , setToken] = useState(true);
 
   return (
 
