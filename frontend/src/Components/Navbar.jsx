@@ -1,15 +1,18 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
   return (
 
     <div className='flex items-center justify-between text-sm py-4 mb-5 '>
 
-        <img className='w-[150]'  src={assets.logo} alt="" />
+        <Link to={'/'}><img to={'/'} className='w-[140px] cursor-pointer'  src={assets.logo} alt="" /></Link>
 
-        <ul className='hidden md:flex items-center gap-5 text-[#49577e] text-base'>
+        <ul className='hidden md:flex items-start py-2 gap-5 text-[#49577e] text-base'>
 
             <NavLink to={'/'}>
 
@@ -45,9 +48,9 @@ const Navbar = () => {
 
         </ul>
 
-        <div>
+        <div className='flex items-center gap-4'>
 
-            <button>Create Account</button>
+            <button onClick={() => navigate('/login')} className='focus:outline-none bg-transparent text-[#49577e] text-sm border-2 border-primary py-2 px-4 cursor-pointer text-center rounded-md md:block'>Create Account</button>
 
         </div>
 
