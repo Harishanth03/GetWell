@@ -54,7 +54,7 @@ const Navbar = () => {
 
         <div className='flex items-center gap-4'>
 
-            <button onClick={() => navigate('/login')} className='focus:outline-none bg-transparent text-[#49577e] text-sm border-2 border-primary py-2 px-4 cursor-pointer text-center rounded-md md:block'>Create Account</button>
+            <button onClick={() => navigate('/login')} className='focus:outline-none bg-primary text-white text-base  py-3 px-5 cursor-pointer text-center rounded-md md:block'>Create Account</button>
 
         </div>
 
