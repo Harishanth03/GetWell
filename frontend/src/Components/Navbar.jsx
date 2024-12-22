@@ -56,11 +56,13 @@ const Navbar = () => {
 
             {token ? 
 
-                <div> 
+                <div className='flex items-center gap-2 cursor-pointer group relative'> 
                     
-                    <img src={assets.profile_pic} alt="" />
+                    <img className='w-11 rounded-full ' src={assets.profile_pic} alt="" />
 
-                    <img src={assets.dropdown_icon} alt="" />
+                    <img className='w-3' src={assets.dropdown_icon} alt="" />
+
+                    
                 
                  </div> 
 
