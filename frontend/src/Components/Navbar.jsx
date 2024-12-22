@@ -66,9 +66,9 @@ const Navbar = () => {
 
                         <div className='min-w-48 bg-stone-100 flex flex-col gap-3 p-4 rounded-md'>
 
-                            <p className='hover:text-black cursor-pointer'>My profile</p>
-                            <p className='hover:text-black cursor-pointer'>My Appointment</p>
-                            <p className='hover:text-black cursor-pointer'>Logout</p>
+                            <p onClick={() => navigate('/my-profile')} className='hover:text-black cursor-pointer'>My profile</p>
+                            <p onClick={() => navigate('/my-appointments')} className='hover:text-black cursor-pointer'>My Appointment</p>
+                            <p onClick={() => setToken(false)} className='hover:text-black cursor-pointer'>Logout</p>
 
                         </div>
 
