@@ -62,7 +62,13 @@ const Navbar = () => {
 
                     <img className='w-3' src={assets.dropdown_icon} alt="" />
 
-                    
+                    <div>
+
+                        <p>My profile</p>
+                        <p>My Appointment</p>
+                        <p>Logout</p>
+
+                    </div>
                 
                  </div> 
 
