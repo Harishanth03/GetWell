@@ -7,9 +7,9 @@ const TopDoctors = () => {
 
     <div className='flex flex-col items-center gap-4 my-16 text-gray-900 md:my-0'>
 
-      <h1 >Top Doctors to Book</h1>
+      <h1 className='text-3xl font-medium'>Top Doctors to Book</h1>
 
-      <p>Simply browse through our extensive list of doctors</p>
+      <p >Simply browse through our extensive list of doctors</p>
 
       <div>
 
@@ -38,6 +38,8 @@ const TopDoctors = () => {
         ))}
 
       </div>
+
+      <button>More</button>
 
     </div>
 
