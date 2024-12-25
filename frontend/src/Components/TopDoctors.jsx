@@ -19,15 +19,15 @@ const TopDoctors = () => {
 
             <img className='bg-blue-50' src={doctors.image} alt="" />
 
-            <div className='p-4'>
+            <div className='p-4 text-center sm:text-start'>
 
-              <div className='flex items-center gap-2 text-sm text-center text-green-500'>
+              <div className='flex items-center justify-center sm:justify-normal gap-2 text-sm text-center text-green-500'>
 
                 <p className='w-2 h-2 bg-green-500 rounded-full'></p> <p>Available</p>
 
               </div>
 
-              <p className='text-gray-900 text-lg font-medium'>{doctors.name}</p>
+              <p className='text-gray-900 text-base font-normal'>{doctors.name}</p>
 
               <p className='text-gray-600 text-sm'>{doctors.speciality}</p>
 
@@ -39,7 +39,7 @@ const TopDoctors = () => {
 
       </div>
 
-      <button>More</button>
+      <button className='bg-blue-50 text-gray-600 px-12 py-3 rounded-full sm:mt-5 mt-6'>More</button>
 
     </div>
 
