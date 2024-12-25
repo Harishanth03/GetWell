@@ -17,9 +17,9 @@ const TopDoctors = () => {
 
           <div key={index} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer'>
 
-            <img src={doctors.image} alt="" />
+            <img className='bg-blue-50' src={doctors.image} alt="" />
 
-            <div>
+            <div className='p-4'>
 
               <div>
 
