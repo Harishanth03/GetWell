@@ -15,7 +15,7 @@ const TopDoctors = () => {
 
         {doctors.slice(0 , 10).map((doctors , index) => (
 
-          <div>
+          <div key={index} className='border'>
 
             <img src={doctors.image} alt="" />
 
