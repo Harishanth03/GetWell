@@ -9,9 +9,9 @@ const TopDoctors = () => {
 
       <h1 className='text-3xl font-medium'>Top Doctors to Book</h1>
 
-      <p >Simply browse through our extensive list of doctors</p>
+      <p className='sm:w-1/3 text-center text-sm'>Simply browse through our extensive list of doctors</p>
 
-      <div>
+      <div className=''>
 
         {doctors.slice(0,10).map((doctors , index) => (
 
