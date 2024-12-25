@@ -17,13 +17,13 @@ const TopDoctors = () => {
 
           <div key={index} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500'>
 
-            <img src={doctors.image} alt="" />
+            <img className='bg-blue-50' src={doctors.image} alt="" />
 
-            <div>
+            <div className='p-4'>
 
-              <div>
+              <div className='flex items-center gap-2 text-sm text-center text-green-500'>
 
-                <p></p> <p>Available</p>
+                <p className=''>1</p> <p>Available</p>
 
               </div>
 
