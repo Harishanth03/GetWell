@@ -50,7 +50,7 @@ const Doctor = () => {
 
         </div>
         {/* ===================================================== RIGHT ================================================ */}
-        <div className=''>
+        <div className='w-full grid grid-cols-auto gap-4 gap-y-6'>
 
           {
            
