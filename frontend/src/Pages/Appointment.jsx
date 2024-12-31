@@ -27,14 +27,14 @@ const Appointment = () => {
 
   return  docInfo && (
     
-    <div>
+    <div >
 
       {/* ==================================================== DOC DETAILS =============================================== */}
-      <div>
+      <div className='flex flex-col sm:flex-row gap-4'>
 
         <div>
 
-          <img src={docInfo.image} alt="" />
+          <img className='bg-primary w-full sm:max-w-72 rounded-lg' src={docInfo.image} alt="" />
 
         </div>
 
