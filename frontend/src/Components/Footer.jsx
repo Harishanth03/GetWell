@@ -22,9 +22,9 @@ const Footer = () => {
 
             <div>
 
-                <p className='text-xl font-medium'>GETWELL</p>
+                <p className='text-xl font-medium mb-5'>GETWELL</p>
 
-                <ul>
+                <ul className='flex flex-col gap-2 text-gray-600'>
 
                     <li>Home</li>
                     <li>ABoutUs</li>
@@ -39,9 +39,9 @@ const Footer = () => {
 
             <div>
 
-                <p  className='text-xl font-medium'>GET IN TOUCH</p>
+                <p  className='text-xl font-medium mb-5'>GET IN TOUCH</p>
 
-                <ul>
+                <ul className='flex flex-col gap-2 text-gray-600'>
 
                     <li>+764132578</li>
                     <li>Harishanth08@gmail.com</li>
@@ -57,7 +57,7 @@ const Footer = () => {
         <div>
 
             <hr />
-            <p>Copyright 2024@ Getwell - All Right Reserved </p>
+            <p className='py-5 text-sm text-center'>Copyright 2024@ Getwell - All Right Reserved </p>
 
         </div>
 
