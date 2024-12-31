@@ -22,7 +22,7 @@ const Footer = () => {
 
             <div>
 
-                <p>GETWELL</p>
+                <p className='text-xl font-medium'>GETWELL</p>
 
                 <ul>
 
@@ -39,7 +39,7 @@ const Footer = () => {
 
             <div>
 
-                <p>GET IN TOUCH</p>
+                <p  className='text-xl font-medium'>GET IN TOUCH</p>
 
                 <ul>
 
