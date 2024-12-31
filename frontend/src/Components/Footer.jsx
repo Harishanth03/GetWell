@@ -22,6 +22,16 @@ const Footer = () => {
 
             <div>
 
+                <p>GETWELL</p>
+
+                <ul>
+
+                    <li>Home</li>
+                    <li>ABoutUs</li>
+                    <li>ContactUs</li>
+                    <li>privacy Policy</li>
+                    
+                </ul>
 
             </div>
 
@@ -29,7 +39,14 @@ const Footer = () => {
 
             <div>
 
+                <p>GET IN TOUCH</p>
 
+                <ul>
+
+                    <li>+764132578</li>
+                    <li>Harishanth08@gmail.com</li>
+
+                </ul>
             </div>
 
         </div>
