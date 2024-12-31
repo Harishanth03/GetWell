@@ -12,9 +12,9 @@ const Banner = () => {
 
         {/* ======================================================= LEFT =============================================== */}
 
-        <div className='flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5'>
+        <div className='flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5 flex flex-col items-center sm:items-start text-center sm:text-left' >
 
-            <div className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white'>
+            <div className=' text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white'>
 
                 <p>Book Appointment</p>
                 <p className='mt-4'>With 50+ Trusted Doctors</p>
