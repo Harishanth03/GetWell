@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../Context/AppContext';
+import { assets } from '../assets/assets';
 
 const Appointment = () => {
 
@@ -24,7 +25,8 @@ const Appointment = () => {
 
   }, [doctors , docId])
 
-  return (
+  return  docInfo && (
+    
     <div>
 
       {/* ==================================================== DOC DETAILS =============================================== */}
@@ -32,9 +34,37 @@ const Appointment = () => {
 
         <div>
 
+          <img src={docInfo.image} alt="" />
 
         </div>
-        
+
+        <div>
+
+          {/* ================================================ DOC INFO ================================================= */}
+
+          <p>{docInfo.name} <img src={assets.verified_icon} alt="" /></p>
+
+          <div>
+
+            <p>{docInfo.degree} - {docInfo.speciality}</p>
+
+            <button>{docInfo.experience}</button>
+
+          </div>
+
+          {/* ================================================ Comment ================================================= */}
+
+          <div>
+
+            <p>About <img src={assets.info_icon} alt="" /></p>
+
+            <p>{docInfo.about}</p>
+
+          </div>
+
+
+        </div>
+
       </div>
 
     </div>
