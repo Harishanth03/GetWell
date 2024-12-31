@@ -5,11 +5,19 @@ import { assets } from '../assets/assets';
 
 const Appointment = () => {
 
-  const {docId} = useParams();
+  const {docId} = useParams(); // Get the docId from the URL
 
-  const {doctors , currencySymbol} = useContext(AppContext);
+  const {doctors , currencySymbol} = useContext(AppContext); // Get the doctors and currencySymbol from the AppContext
 
-  const [docInfo, setDocInfo] = useState(null);
+  const [docInfo, setDocInfo] = useState(null); // State to store the doctor info
+
+  const [docSlots , setDocSlots] = useState([]); // State to store the doctor slots
+
+  const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
+
+  const [sloatTime , setSloatTime] = useState(""); // State to store the selected slot time
+
+  // ==================================================== FETCH DOC INFO =====================================================
 
   const fetchDocInfo = async () => {
     
@@ -19,11 +27,19 @@ const Appointment = () => {
 
   }
 
+  // ==================================================== FETCH DOC SLOTS =====================================================
+
   useEffect(() => {
 
     fetchDocInfo();
 
-  }, [doctors , docId])
+  }, [doctors , docId]);
+
+  // ==================================================== SELECT SLOT =======================================================
+
+
+  // ==================================================== Get Available SLOTS ================================================
+
 
   return  docInfo && (
     
