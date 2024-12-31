@@ -7,7 +7,7 @@ const Banner = () => {
 
         {/* ======================================================= LEFT =============================================== */}
 
-        <div>
+        <div className='flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5'>
 
             <div>
 
@@ -17,14 +17,14 @@ const Banner = () => {
             </div>
 
             <button>Create Account</button>
-            
+
         </div>
 
         {/* ======================================================= RIGHT =============================================== */}
 
-        <div>
+        <div className='hidden md:block md:w-1/2 lg:w-[370px] relative'>
 
-            <img src={assets.appointment_img} alt="" />
+            <img className='w-full absolute bottom-0 right-0 max-w-md' src={assets.appointment_img} alt="" />
 
         </div>
 
