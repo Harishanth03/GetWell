@@ -30,7 +30,7 @@ const Footer = () => {
                     <li>ABoutUs</li>
                     <li>ContactUs</li>
                     <li>privacy Policy</li>
-                    
+
                 </ul>
 
             </div>
@@ -47,7 +47,17 @@ const Footer = () => {
                     <li>Harishanth08@gmail.com</li>
 
                 </ul>
+
             </div>
+
+        </div>
+
+        {/* ================================================ COPY RIGHT ================================================== */}
+
+        <div>
+
+            <hr />
+            <p>Copyright 2024@ Getwell - All Right Reserved </p>
 
         </div>
 
