@@ -3,18 +3,22 @@ import { assets } from '../assets/assets'
 
 const Banner = () => {
   return (
-    <div className=''>
+    <div className='flex bg-primary rounded-lg px-6 md:px-14 lg:px-12 my-20 md:mx-10'>
 
         {/* ======================================================= LEFT =============================================== */}
 
         <div>
 
-            <p>Book Appointment</p>
-            <p>With 50+ Trusted Doctors</p>
+            <div>
 
+                <p>Book Appointment</p>
+                <p>With 50+ Trusted Doctors</p>
+
+            </div>
+
+            <button>Create Account</button>
+            
         </div>
-
-        <button>Create Account</button>
 
         {/* ======================================================= RIGHT =============================================== */}
 
