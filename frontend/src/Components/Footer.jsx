@@ -13,8 +13,8 @@ const Footer = () => {
 
             <div>
 
-                <img src={assets.logo} alt="" />
-                <p>At Getwell, we are dedicated to providing compassionate, personalized, and top-quality healthcare to our community. Our team of experienced professionals works tirelessly to ensure you and your loved ones receive the care you deserve. Whether it's preventive care, treatment, or recovery, we’re here to support your journey to better health. Thank you for trusting Getwell with your well-being.</p>
+                <img className='mb-5 w-30' src={assets.logo} alt="" />
+                <p className='w-full md:w-2/3 text-gray-600 leading-6'>At Getwell, we are dedicated to providing compassionate, personalized, and top-quality healthcare to our community. Our team of experienced professionals works tirelessly to ensure you and your loved ones receive the care you deserve. Whether it's preventive care, treatment, or recovery, we’re here to support your journey to better health. Thank you for trusting Getwell with your well-being.</p>
 
             </div>
 
