@@ -7,7 +7,7 @@ const Appointment = () => {
 
   const {docId} = useParams();
 
-  const {doctors} = useContext(AppContext);
+  const {doctors , currencySymbol} = useContext(AppContext);
 
   const [docInfo, setDocInfo] = useState(null);
 
@@ -62,7 +62,7 @@ const Appointment = () => {
 
           </div>
 
-          <p>Appointment Fees: <span>{docInfo.fees}</span></p>
+          <p>Appointment Fees: <span>{currencySymbol}{docInfo.fees}</span></p>
 
 
         </div>
