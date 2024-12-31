@@ -42,7 +42,7 @@ const Appointment = () => {
 
           {/* ================================================ DOC INFO ================================================= */}
 
-          <p>{docInfo.name} <img src={assets.verified_icon} alt="" /></p>
+          <p className='flex items-center gap-2 text-xl font-medium text-gray-900'>{docInfo.name} <img className='w-5' src={assets.verified_icon} alt="" /></p>
 
           <div>
 
