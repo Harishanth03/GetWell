@@ -12,6 +12,17 @@ const Navbar = () => {
 
     const [token , setToken] = useState(true);
 
+    const toggleMenu = () => {
+
+        setShowMenu((prev) => !prev);
+
+    }
+
+    const closeMenu = () => {
+
+        setShowMenu(false);
+    }
+
   return (
 
     <div className='flex items-center justify-between text-sm py-4 mb-5 '>
