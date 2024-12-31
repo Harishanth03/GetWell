@@ -1,6 +1,6 @@
 import React from 'react'
 import { specialityData } from '../assets/assets'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 const Specialitymenu = () => {
 
@@ -16,7 +16,7 @@ const Specialitymenu = () => {
 
             {specialityData.map((data , index) => (
 
-              <Link onClick={()=>scrollTo(0,0)} className='flex flex-col items-center text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transection-all duration-500' key={index} to={`/doctors/${data.speciality}`}>
+              <Link onClick={()=> {Navigate('/doctors') , scrollTo(0,0)}} className='flex flex-col items-center text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transection-all duration-500' key={index} to={`/doctors/${data.speciality}`}>
               
                 <img className='w-16 sm:w-18 mb-2' src={data.image} alt="" />
 

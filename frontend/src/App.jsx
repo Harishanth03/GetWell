@@ -25,7 +25,7 @@ const App = () => {
 
         <Route path='/doctor' element={<Doctor/>}/>
 
-        <Route path='/doctor/:speciality' element={<Doctor/>}/>
+        <Route path='/doctors/:speciality' element={<Doctor/>}/>
 
         <Route path='/login' element={<Login/>}/>
 
