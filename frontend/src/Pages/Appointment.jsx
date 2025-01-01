@@ -42,7 +42,13 @@ const Appointment = () => {
 
     getAvailableSlots(); // when doctor information will change at the same time available slots also changes
 
-  } , [docInfo])
+  } , [docInfo]);
+
+  useEffect(() => {
+
+    console.log(docSlot);
+
+  }, [docSlot])
 
   // ==================================================== GET AVAILABLE SLOTS ================================================
 
@@ -71,9 +77,43 @@ const Appointment = () => {
 
       endTime.setHours(21,0,0,0); // set the time to 9:00 PM
 
-      console.log(endTime);
+      //Setting Hourse
 
+      if(today.getDate() === currentDate.getDate())
+      {
+        currentDate.setHours(currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10);
 
+        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+        
+      }
+      else
+      {
+        currentDate.setHours(10);
+
+        currentDate.setMinutes(0);
+      }
+
+      let timeSlots = [];
+      
+      while(currentDate < endTime)
+      {
+
+        let formattedTime = currentDate.toLocaleDateString([] , {hour: '2-digit' , minute: '2-digit'});
+
+        timeSlots.push({
+
+          datetime: new Date(currentDate),
+
+          time: formattedTime
+
+        });
+
+        //Adding 30 minutes to the current date
+
+        currentDate.setMinutes(currentDate.getMinutes() + 30);
+      }
+     
+      setDocSlots(prev => ([...prev , timeSlots]));
 
     }
 
