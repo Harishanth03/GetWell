@@ -52,7 +52,13 @@ const Appointment = () => {
 
     let today = new Date(); // get the current date
 
-    
+    //Now i will calculate the 7 days from the current date so i use FOR loop.
+
+    for(let i = 0 ; i < 7 ; i++)
+    {
+
+
+    }
 
   }
 
