@@ -57,6 +57,14 @@ const Appointment = () => {
     for(let i = 0 ; i < 7 ; i++)
     {
 
+      //now i will set the date using index of the loop
+
+      let currentDate = new Date(today); // create copy of today
+      
+      currentDate.setDate(today.getDate() + i); // in every iteration the current date increase by using setDate its get the today date and increate using index in every iteration
+      
+
+      
 
     }
 
