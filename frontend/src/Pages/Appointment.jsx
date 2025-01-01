@@ -11,6 +11,8 @@ const Appointment = () => {
 
   const [docInfo, setDocInfo] = useState(null); // State to store the doctor info
 
+  const dayOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']; // Array to store the days of the week
+
   const [docSlot , setDocSlots] = useState([]); // State to store the doctor slots
 
   const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
