@@ -166,8 +166,36 @@ const Appointment = () => {
 
       {/* ================================================ Booking SLOTS ================================================= */}
 
+      <div className='sm:ml-72 sm:pl-4 mt-8 text-gray-700'>
+
+        <p className='text-center md:text-start'>Book Your Appointment Here</p>
+
+        <div className='flex gap-3 items-center w-full overflow-x-scroll mt-4 justify-between'>
+
+          {
+
+            docSlot.length && docSlot.map((item , index) => (
+
+              <div className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-300'}`} key={index}>
+
+                <p>{item[0] && dayOfWeek[item[0].datetime.getDay()]}</p>
+
+                <p>{item[0] && item[0].datetime.getDate()}</p>
+
+              </div>
+
+            ))
+
+          }
+
+        </div>
+
+      </div>
+
     </div>
+
   )
+
 }
 
 export default Appointment
