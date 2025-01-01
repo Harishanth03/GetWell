@@ -194,7 +194,7 @@ const Appointment = () => {
           
           {docSlot.length && docSlot[slotIndex].map((item , index) => (
 
-            <p key={index}>
+            <p className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer`} key={index}>
 
               {item.time.toLowerCase()}
 
