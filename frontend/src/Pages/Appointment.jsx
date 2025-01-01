@@ -15,6 +15,8 @@ const Appointment = () => {
 
   const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
 
+  const [slotTime , setSlotTime] = useState(''); // State to store the selected slot time
+
 
   // ==================================================== FETCH DOC INFO =====================================================
 
@@ -34,6 +36,25 @@ const Appointment = () => {
 
   }, [doctors , docId]);
 
+  // ==================================================== SELECT SLOT =====================================================
+
+  useEffect(() => {
+
+    getAvailableSlots(); // when doctor information will change at the same time available slots also changes
+
+  } , [docInfo])
+
+  // ==================================================== GET AVAILABLE SLOTS ================================================
+
+  const getAvailableSlots = async() => {
+    
+    setDocSlots([]); //first we need to clear previous slots
+
+    let today = new Date(); // get the current date
+
+    
+
+  }
 
   return  docInfo && (
     
