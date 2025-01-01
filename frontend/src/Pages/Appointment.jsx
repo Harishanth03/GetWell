@@ -9,7 +9,11 @@ const Appointment = () => {
 
   const {doctors , currencySymbol} = useContext(AppContext); // Get the doctors and currencySymbol from the AppContext
 
+  const [docInfo, setDocInfo] = useState(null); // State to store the doctor info
 
+  const [docSlot , setDocSlots] = useState([]); // State to store the doctor slots
+
+  const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
 
 
   // ==================================================== FETCH DOC INFO =====================================================
