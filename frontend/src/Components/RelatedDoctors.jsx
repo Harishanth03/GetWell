@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-const RelatedDoctors = () => {
+const RelatedDoctors = ({docId , speciality}) => {
 
     const { doctors } = useContext(AppContext);
 
