@@ -15,15 +15,14 @@ const Appointment = () => {
 
   const [docSlot , setDocSlots] = useState([]); // State to store the doctor slots
 
+  const [selectedSlots , setSelectedSlots] = useState({}); // State to store the selected date and time separately
+
   const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
-
-  const [slotTime , setSlotTime] = useState(''); // State to store the selected slot time
-
 
   // ==================================================== FETCH DOC INFO =====================================================
 
   const fetchDocInfo = async () => {
-    
+
     const docInfo = doctors.find(doc => doc._id === docId);
 
     setDocInfo(docInfo);
@@ -38,69 +37,50 @@ const Appointment = () => {
 
   }, [doctors , docId]);
 
-  // ==================================================== SELECT SLOT =====================================================
-
-  useEffect(() => {
-
-    getAvailableSlots(); // when doctor information will change at the same time available slots also changes
-
-  } , [docInfo]);
-
-  useEffect(() => {
-
-    console.log(docSlot);
-
-  }, [docSlot])
-
   // ==================================================== GET AVAILABLE SLOTS ================================================
 
   const getAvailableSlots = async() => {
-    
-    setDocSlots([]); //first we need to clear previous slots
 
-    let today = new Date(); // get the current date
+    setDocSlots([]); // Clear previous slots
 
-    //Now i will calculate the 7 days from the current date so i use FOR loop.
+    let today = new Date(); // Get the current date
 
-    for(let i = 0 ; i < 7 ; i++)
-    {
+    // Loop to calculate the next 7 days of slots
+    for (let i = 0; i < 7; i++) {
 
-      //now i will set the date using index of the loop
+      let currentDate = new Date(today);
 
-      let currentDate = new Date(today); // create copy of today
-      
-      currentDate.setDate(today.getDate() + i); // in every iteration the current date increase by using setDate its get the today date and increate using index in every iteration
+      currentDate.setDate(today.getDate() + i); // Increment the date
 
-      //Setting endTime for the date using index
 
-      let endTime = new Date(); // get the current date
+      let endTime = new Date();
 
       endTime.setDate(today.getDate() + i);
 
-      endTime.setHours(21,0,0,0); // set the time to 9:00 PM
+      endTime.setHours(21, 0, 0, 0); // Set end time to 9:00 PM
 
-      //Setting Hourse
 
-      if(today.getDate() === currentDate.getDate())
-      {
+      if(today.getDate() === currentDate.getDate()) {
+
         currentDate.setHours(currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10);
 
         currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
-        
-      }
-      else
+
+      } 
+      else 
       {
+
         currentDate.setHours(10);
 
         currentDate.setMinutes(0);
+
       }
 
       let timeSlots = [];
-      
-      while(currentDate < endTime)
-      {
 
-        let formattedTime = currentDate.toLocaleTimeString([] , {hour: '2-digit' , minute: '2-digit'});
+      while (currentDate < endTime) 
+      {
+        let formattedTime = currentDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
         timeSlots.push({
 
@@ -110,22 +90,50 @@ const Appointment = () => {
 
         });
 
-        //Adding 30 minutes to the current date
+        currentDate.setMinutes(currentDate.getMinutes() + 30); // Add 30 minutes
 
-        currentDate.setMinutes(currentDate.getMinutes() + 30);
       }
-     
-      setDocSlots(prev => ([...prev , timeSlots]));
+
+      setDocSlots(prev => ([...prev, timeSlots]));
 
     }
 
   }
 
-  return  docInfo && (
-    
-    <div >
+  // ==================================================== HANDLE SLOT SELECTION =====================================================
+
+  const handleSlotSelection = (dateIndex, time) => 
+  {
+
+    setSelectedSlots(prev => ({...prev, [dateIndex]: time}));
+
+  }
+
+  // ==================================================== HANDLE CLEAR =====================================================
+
+  const handleClear = () => 
+  {
+
+    setSlotIndex(0); // Reset the selected date index
+
+    setSelectedSlots({}); // Clear all selected slots
+
+  }
+
+  // ==================================================== INITIAL SETUP =====================================================
+
+  useEffect(() => 
+  {
+
+    getAvailableSlots();
+
+  }, [docInfo]);
+
+  return docInfo && (
+    <div>
 
       {/* ==================================================== DOC DETAILS =============================================== */}
+
       <div className='flex flex-col sm:flex-row gap-4'>
 
         <div>
@@ -136,8 +144,6 @@ const Appointment = () => {
 
         <div className='flex-1 border border-gray-400 rounded-lg p-8 py-7 bg-white mx-2 sm:mx-0 mt-[-80] sm:mt-0'>
 
-          {/* ================================================ DOC INFO ================================================= */}
-
           <p className='flex items-center gap-2 text-xl font-medium text-gray-900'>{docInfo.name} <img className='w-5' src={assets.verified_icon} alt="" /></p>
 
           <div className='flex items-center gap-2 mt-3 text-sm text-gray-500'>
@@ -147,8 +153,6 @@ const Appointment = () => {
             <button className='py-0.5 border px-2 text-xs rounded-full'>{docInfo.experience}</button>
 
           </div>
-
-          {/* ================================================ Comment ================================================= */}
 
           <div className=''>
 
@@ -164,7 +168,8 @@ const Appointment = () => {
 
       </div>
 
-      {/* ================================================ Booking SLOTS ================================================= */}
+
+      {/* ================================================ BOOKING SLOTS ================================================= */}
 
       <div className='sm:ml-72 sm:pl-4 mt-8 text-gray-700'>
 
@@ -172,29 +177,38 @@ const Appointment = () => {
 
         <div className='flex gap-3 items-center w-full overflow-x-scroll mt-4 justify-between'>
 
-          {
+          {docSlot.length && docSlot.map((item, index) => (
 
-            docSlot.length && docSlot.map((item , index) => (
+            <div 
 
-              <div onClick={() => setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-300'}`} key={index}>
+              onClick={() => setSlotIndex(index)} 
 
-                <p>{item[0] && dayOfWeek[item[0].datetime.getDay()]}</p>
+              className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-300'}`} 
 
-                <p>{item[0] && item[0].datetime.getDate()}</p>
+              key={index}>
 
-              </div>
+              <p>{item[0] && dayOfWeek[item[0].datetime.getDay()]}</p>
 
-            ))
+              <p>{item[0] && item[0].datetime.getDate()}</p>
 
-          }
+            </div>
+
+          ))}
 
         </div>
 
-        <div>
-          
-          {docSlot.length && docSlot[slotIndex].map((item , index) => (
 
-            <p className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer`} key={index}>
+        <div className='flex flex-wrap items-center justify-center sm:justify-start mt-5 gap-2'>
+
+          {docSlot.length && docSlot[slotIndex].map((item, index) => (
+
+            <p 
+
+              onClick={() => handleSlotSelection(slotIndex, item.time)} 
+
+              className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${selectedSlots[slotIndex] === item.time ? 'bg-primary text-white' : 'border border-gray-300'}`} 
+
+              key={index}>
 
               {item.time.toLowerCase()}
 
@@ -204,12 +218,16 @@ const Appointment = () => {
 
         </div>
 
+        <button className='w-full mt-5 bg-primary text-white py-2.5 rounded-full'>Book an Appointment</button>
+
+        <button onClick={handleClear} className='w-full mt-5 border border-primary text-gray-700 py-2.5 rounded-full'>Clear</button>
+
       </div>
 
     </div>
 
-  )
-
+  );
+  
 }
 
-export default Appointment
+export default Appointment;
