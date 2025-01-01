@@ -62,9 +62,18 @@ const Appointment = () => {
       let currentDate = new Date(today); // create copy of today
       
       currentDate.setDate(today.getDate() + i); // in every iteration the current date increase by using setDate its get the today date and increate using index in every iteration
-      
 
-      
+      //Setting endTime for the date using index
+
+      let endTime = new Date(); // get the current date
+
+      endTime.setDate(today.getDate() + i);
+
+      endTime.setHours(21,0,0,0); // set the time to 9:00 PM
+
+      console.log(endTime);
+
+
 
     }
 
