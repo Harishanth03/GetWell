@@ -17,7 +17,7 @@ const Appointment = () => {
 
   const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
 
-  const [sloatTime , setSloatTime] = useState(''); // State to store the selected slot time
+  const [sloatTime , setSloatTime] = useState(""); // State to store the selected slot time
 
   // ==================================================== FETCH DOC INFO =====================================================
 
@@ -92,8 +92,8 @@ const Appointment = () => {
 
         //add slots to the array
         timeSlots.push({
-          dateTime: new Date(currentDate),
-          time: formattedTime
+          datetime:new Date(currentDate),
+          time:formattedTime
         })
 
         //increment time by 30 minutes
@@ -112,7 +112,7 @@ const Appointment = () => {
 
     console.log(docSlots);
 
-  }, [])
+  }, [docSlots])
 
   return  docInfo && (
     
@@ -171,9 +171,9 @@ const Appointment = () => {
 
               <div onClick={() => setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-400'}`} key={index}>
 
-                <p>{item[0] && daysOfWeek[item[0].dateTime.getDay()]}</p>
+                <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
 
-                <p>{item[0] && item[0].dateTime.getDate()}</p>
+                <p>{item[0] && item[0].datetime.getDate()}</p>
 
               </div>
 
