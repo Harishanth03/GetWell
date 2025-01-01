@@ -9,13 +9,15 @@ const Appointment = () => {
 
   const {doctors , currencySymbol} = useContext(AppContext); // Get the doctors and currencySymbol from the AppContext
 
+  const daysOfWeek = ['SUN' , 'MON' , 'TUE' , 'WED' , 'THU' , 'FRI' , 'SAT']; // Array to store the days of the week]
+
   const [docInfo, setDocInfo] = useState(null); // State to store the doctor info
 
   const [docSlots , setDocSlots] = useState([]); // State to store the doctor slots
 
   const [slotIndex , setSlotIndex] = useState(0); // State to store the selected slot index
 
-  const [sloatTime , setSloatTime] = useState(""); // State to store the selected slot time
+  const [sloatTime , setSloatTime] = useState(''); // State to store the selected slot time
 
   // ==================================================== FETCH DOC INFO =====================================================
 
@@ -36,10 +38,81 @@ const Appointment = () => {
   }, [doctors , docId]);
 
   // ==================================================== SELECT SLOT =======================================================
+  useEffect(() => {
 
+    getAvailableSlots();
+
+  }, [docInfo])
 
   // ==================================================== Get Available SLOTS ================================================
 
+  const getAvailableSlots = async () => 
+  {
+
+    setDocSlots([]);
+
+    //Get current Date
+
+    let today = new Date();
+
+    //calculate 7 days from today
+
+    for(let i = 0; i < 7; i++)
+    {
+
+      //getting date with index
+      let currentDate = new Date(today);
+
+      currentDate.setDate(today.getDate() + i);
+
+      //setting endtime of the date with index
+
+      let endTime = new Date();
+      endTime.setDate(today.getDate() + i);
+      endTime.setHours(21,0,0,0);
+
+      //setting hours
+      if(today.getDate() === currentDate.getDate())
+      {
+        currentDate.setHours(currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10);
+        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+      }
+      else
+      {
+        currentDate.setHours(10);
+        currentDate.setMinutes(0);
+      }
+
+      let timeSlots = [];
+
+      while(currentDate < endTime)
+      {
+
+        let formattedTime = currentDate.toLocaleTimeString([], {hour: "2-digit" , minute: "2-digit"});
+
+        //add slots to the array
+        timeSlots.push({
+          datetime:new Date(currentDate),
+          time:formattedTime
+        })
+
+        //increment time by 30 minutes
+
+        currentDate.setMinutes(currentDate.getMinutes() + 30);
+
+      }
+
+      setDocSlots(prev => ([...prev , timeSlots]))
+
+    }
+
+  }
+
+  useEffect(() => {
+
+    console.log(docSlots);
+
+  }, [])
 
   return  docInfo && (
     
@@ -80,6 +153,47 @@ const Appointment = () => {
 
           <p className='text-gray-500 font-medium mt-3'>Appointment Fees: <span className='text-gray-600'>{currencySymbol}{docInfo.fees}</span></p>
 
+        </div>
+
+      </div>
+
+      {/* ================================================ Booking SLOTS ================================================= */}
+
+      <div className='sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700'>
+
+        <p>Booking Slots</p>
+
+        <div className='flex items-center justify-between gap-4 w-full overflow-x-scroll mt-4'>
+
+          {
+
+            docSlots.length && docSlots.map((item , index) => (
+
+              <div onClick={() => setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-400'}`} key={index}>
+
+                <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
+
+                <p>{item[0] && item[0].datetime.getDate()}</p>
+
+              </div>
+
+            ))
+
+          }
+
+        </div>
+
+        <div className='flex justify-center sm:justify-start flex-wrap items-center gap-3 w-full overflow-x-scroll mt-4'>
+
+          {docSlots.length && docSlots[slotIndex].map((item , index) => (
+
+            <p onClick={() => setSloatTime(item.time)} className={`text-sm font-light flex-shrink-0 px-5 py-2  rounded-full cursor-pointer ${item.time === sloatTime ? 'bg-primary text-white' : 'text-gray-400 border border-gray-200'}`} key={index}>
+
+              {item.time.toLowerCase()}
+
+            </p>
+
+          ))}
 
         </div>
 
