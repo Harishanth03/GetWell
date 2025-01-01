@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../Context/AppContext';
 import { assets } from '../assets/assets';
+import RelatedDoctors from '../Components/RelatedDoctors';
 
 const Appointment = () => {
 
@@ -224,10 +225,14 @@ const Appointment = () => {
 
       </div>
 
+      {/* ==================================================== RELATED DOCTORS ========================================== */}
+
+      <RelatedDoctors docId={docId} speciality={docInfo.speciality}/>
+
     </div>
 
   );
-  
+
 }
 
 export default Appointment;
