@@ -100,7 +100,7 @@ const Appointment = () => {
       while(currentDate < endTime)
       {
 
-        let formattedTime = currentDate.toLocaleDateString([] , {hour: '2-digit' , minute: '2-digit'});
+        let formattedTime = currentDate.toLocaleTimeString([] , {hour: '2-digit' , minute: '2-digit'});
 
         timeSlots.push({
 
@@ -176,7 +176,7 @@ const Appointment = () => {
 
             docSlot.length && docSlot.map((item , index) => (
 
-              <div className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-300'}`} key={index}>
+              <div onClick={() => setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? 'bg-primary text-white' : 'border border-gray-300'}`} key={index}>
 
                 <p>{item[0] && dayOfWeek[item[0].datetime.getDay()]}</p>
 
@@ -187,6 +187,20 @@ const Appointment = () => {
             ))
 
           }
+
+        </div>
+
+        <div>
+          
+          {docSlot.length && docSlot[slotIndex].map((item , index) => (
+
+            <p key={index}>
+
+              {item.time.toLowerCase()}
+
+            </p>
+
+          ))}
 
         </div>
 
