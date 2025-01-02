@@ -26,24 +26,24 @@ const MyAppointment = () => {
 
               </div>
 
-              <div>
+              <div className='flex-1 text-sm text-neutral-600'>
 
-                <p>{item.name}</p>
+                <p className='text-neutral-800 font-medium'>{item.name}</p>
                 <p>{item.speciality}</p>
-                <p>Address</p>
-                <p>{item.address.line1}</p>
-                <p>{item.address.line2}</p>
-                <p> <span>Date & Time:</span> 25, July, 2024 |  8:30 PM</p>
+                <p className='text-neutral-800 font-medium mt-1'>Address</p>
+                <p className='text-xs'>{item.address.line1}</p>
+                <p className='text-xs'>{item.address.line2}</p>
+                <p className='text-sm mt-1'> <span className='text-sm text-neutral-700 font-medium'>Date & Time:</span> 25, July, 2024 |  8:30 PM</p>
 
               </div>
 
               <div></div>
 
-              <div>
+              <div className='flex flex-col gap-2 justify-center'>
 
-                <button>Pay Online</button>
+                <button className='text-sm text-stone-500 hover:bg-primary hover:text-white transition-all duration-300 text-center sm:min-w-48 py-2 border rounded'>Pay Online</button>
                 
-                <button>Cancle Appointment</button>
+                <button className='text-sm text-stone-500 hover:bg-red-600 hover:text-white transition-all duration-300 text-center sm:min-w-48 py-2 border rounded'>Cancle Appointment</button>
 
               </div>
 
