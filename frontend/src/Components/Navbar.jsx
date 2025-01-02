@@ -91,7 +91,7 @@ const Navbar = () => {
                 
                  </div> 
 
-                : <button onClick={() => navigate('/login')} className='focus:outline-none bg-primary text-white text-base  py-3 px-5 cursor-pointer text-center rounded-md md:block'>Create Account</button>
+                : <button onClick={() => navigate('/login')} className='focus:outline-none bg-primary text-white text-base py-2 px-4  md:py-3 md:px-5 cursor-pointer text-center rounded-md md:block'>Sign Up</button>
 
             }
 

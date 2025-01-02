@@ -21,7 +21,7 @@ const Login = () => {
 
     <form action="" className='min-h-[80vh] flex items-center'>
 
-      <div>
+      <div className=''>
 
         <p>{state === 'Sign Up' ? 'Create Account' : 'LogIn'}</p>
 
@@ -29,24 +29,26 @@ const Login = () => {
 
         <div>
 
-          <label htmlFor="fullName">Full Name</label>
+          <p htmlFor="fullName">Full Name</p>
           <input id='fullName' value={name} onChange={() => setname(e.target.name)} type="text" required/>
 
         </div>
 
         <div>
 
-          <label htmlFor="Email">Email</label>
+          <p htmlFor="Email">Email</p>
           <input id='Email' value={email} onChange={() => setname(e.target.name)} type="email" required/>
           
         </div>
 
         <div>
 
-          <label htmlFor="Password">Full Name</label>
+          <p htmlFor="Password">Full Name</p>
           <input id='Password' value={name} onChange={() => setname(e.target.name)} type="password" required/>
           
         </div>
+
+        <button>{state === 'Sign Up' ? "Sign Up" : "Sign In"}</button>
 
       </div>
 
