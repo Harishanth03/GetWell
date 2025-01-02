@@ -13,7 +13,7 @@ const About = () => {
 
       </div>
 
-      <div>
+      <div className='flex flex-col md:flex-row gap-12'>
 
         <img src={assets.about_image} alt="" />
 
