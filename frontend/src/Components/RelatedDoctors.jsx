@@ -36,7 +36,7 @@ const RelatedDoctors = ({docId , speciality}) => {
 
         {relatedDoctors.slice(0,5).map((doctors , index) => (
 
-          <div onClick={() => navigate(`/appointment/${doctors._id}`)} key={index} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer'>
+          <div onClick={() => {navigate(`/appointment/${doctors._id}`); scrollTo(0,0)}} key={index} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer'>
 
             <img className='bg-blue-50' src={doctors.image} alt="" />
 
