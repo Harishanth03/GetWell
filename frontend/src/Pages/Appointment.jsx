@@ -172,7 +172,7 @@ const Appointment = () => {
 
       {/* ================================================ BOOKING SLOTS ================================================= */}
 
-      <div className='sm:ml-72 sm:pl-4 mt-8 text-gray-700'>
+      <div className=' mt-8 text-gray-700'>
 
         <p className='text-center md:text-start'>Book Your Appointment Here</p>
 
