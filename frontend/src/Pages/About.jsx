@@ -39,6 +39,40 @@ const About = () => {
 
       </div>
 
+      <div className='text-xl my-4'>
+
+        <p>WHY <span className='text-primary font-semibold'>CHOOSE</span> US</p>
+
+      </div>
+
+      <div>
+
+        <div>
+
+          <b>Efficiency:</b>
+
+          <p>Streamlined appointment scheduling that fits into your busy lifestyle.</p>
+
+        </div>
+
+        <div>
+
+          <b>Convenience:</b>
+
+          <p>Access to a network of trusted healthcare professionals in your area.</p>
+
+        </div>
+
+        <div>
+
+          <b>Personalization:</b>
+
+          <p>Tailored recommendations and reminders to help you stay on top of your health.</p>
+
+        </div>
+
+      </div>
+
     </div>
 
   )
