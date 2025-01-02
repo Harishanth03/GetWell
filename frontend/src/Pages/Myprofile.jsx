@@ -30,7 +30,7 @@ const Myprofile = () => {
       {
         isEdit ? 
 
-        <input value={userData.name} onChange={e => setUserData(prev => ({...prev , name:e.target.value}))} type="text" name="" id="" /> : <p>{userData.name}</p>
+        <input className='w-full md:w-52 border sm:py-2 focus:border-primary focus:outline-none border-zinc-200 rounded-sm py-1 px-2 mt-2' value={userData.name} onChange={e => setUserData(prev => ({...prev , name:e.target.value}))} type="text" name="" id="" /> : <p>{userData.name}</p>
       }
 
       <hr />
