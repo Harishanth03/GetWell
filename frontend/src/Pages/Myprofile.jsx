@@ -23,9 +23,9 @@ const Myprofile = () => {
 
   return (
 
-    <div>
+    <div className='max-w-lg flex flex-col gap-2 text-sm'>
 
-      <img src={userData.image} alt="" />
+      <img className='w-36 rounded m-auto md:m-0' src={userData.image} alt="" />
 
       {
         isEdit ? 
