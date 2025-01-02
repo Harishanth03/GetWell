@@ -37,34 +37,34 @@ const Myprofile = () => {
 
       <div className='flex flex-col gap-2 '>
 
-        <p className='text-black font-semibold'>Contact Information</p>
+        <p className='text-black font-semibold mt-3'>Contact Information</p>
 
-        <div className='flex flex-col gap-2'>
+        <div className='grid grid-cols-[1fr_3fr] gap-y-2.5 text-neutral-700'>
 
-          <p>Email: </p>
+          <p className='font-medium'>Email: </p>
 
-          <p>{userData.email}</p>
+          <p className='text-primary'>{userData.email}</p>
 
-          <p>Phone: </p>
+          <p className='font-medium'>Phone: </p>
           {
-            isEdit ? <input value={userData.phone} onChange={e => setUserData(prev => ({...prev , phone:e.target.value}))} type="text" name="" id="" /> : <p>{userData.phone}</p>
+            isEdit ? <input  className='max-2-52' value={userData.phone} onChange={e => setUserData(prev => ({...prev , phone:e.target.value}))} type="text" name="" id="" /> : <p className='text-primary'>{userData.phone}</p>
           }
 
-          <p>Address:</p>
+          <p className='font-medium'>Address:</p>
 
           {
             isEdit ? 
-            
-            <p>
 
-              <input onChange={(e) => setUserData(prev => ({...prev.address , line1 : e.target.value}))} value={userData.address.line1} type="text" />
+            <p className=''>
+
+              <input  onChange={(e) => setUserData(prev => ({...prev.address , line1 : e.target.value}))} value={userData.address.line1} type="text" />
               <br />
-              <input onChange={(e) => setUserData(prev => ({...prev.address , line2 : e.target.value}))} value={userData.address.line2} type="text" />
+              <input  onChange={(e) => setUserData(prev => ({...prev.address , line2 : e.target.value}))} value={userData.address.line2} type="text" />
 
             </p> :
 
-            <p>
-
+            <p className='text-primary'>
+ 
               {userData.address.line1}
 
               <br />
@@ -79,13 +79,13 @@ const Myprofile = () => {
 
       </div>
 
-      <div>
+      <div className='flex flex-col gap-2 '>
 
-        <p>Basic Information</p>
+        <p className='text-black font-semibold mt-3'>Basic Information</p>
 
-        <div>
+        <div  className='grid grid-cols-[1fr_3fr] gap-y-2.5 text-neutral-700'>
 
-          <p>Gender: </p>
+          <p className='font-medium'>Gender: </p>
 
           {
 
@@ -98,10 +98,10 @@ const Myprofile = () => {
 
             </select>
             
-            : <p>{userData.gender}</p>
+            : <p className='text-primary'>{userData.gender}</p>
           }
 
-          <p>BirthDate: </p>
+          <p className='font-medium'>BirthDate: </p>
 
           {
 
@@ -109,7 +109,7 @@ const Myprofile = () => {
 
             <input onChange={e => setUserData((prev) => ({...prev , dob:e.target.value}))} value={userData.dob} type="date"/>
 
-            : <p>{userData.dob}</p>
+            : <p className='text-primary'>{userData.dob}</p>
 
           }
 
@@ -117,17 +117,17 @@ const Myprofile = () => {
 
       </div>
 
-      <div>
+      <div className='flex flex-col mt-4'>
 
         {
           
           isEdit ?
 
-          <button onClick={() => setIsEdit(false)}> Save Information </button>
+          <button className='bg-primary text-white py-2 w-auto rounded' onClick={() => setIsEdit(false)}> Save Information </button>
 
           : 
 
-          <button onClick={() => setIsEdit(true)}> Edit </button>
+          <button className='bg-primary text-white py-2 w-auto rounded' onClick={() => setIsEdit(true)}> Edit </button>
 
         }
 
