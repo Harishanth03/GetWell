@@ -45,9 +45,9 @@ const About = () => {
 
       </div>
 
-      <div>
+      <div className=' md:flex-row flex flex-col mb-20'>
 
-        <div>
+        <div className='border md:px-20 md:py-10 px-10 py-8 text-center flex-col gap-5 text-[15px] hover:cursor-pointer text-gray-600 hover:bg-primary hover:text-white '>
 
           <b>Efficiency:</b>
 
@@ -55,7 +55,7 @@ const About = () => {
 
         </div>
 
-        <div>
+        <div className='border md:px-20 md:py-10 px-10 py-8 text-center flex-col gap-5 text-[15px]  hover:cursor-pointer text-gray-600 hover:bg-primary hover:text-white '>
 
           <b>Convenience:</b>
 
@@ -63,7 +63,7 @@ const About = () => {
 
         </div>
 
-        <div>
+        <div className='border md:px-20 md:py-10 px-10 py-8 text-center flex-col gap-5 text-[15px] hover:cursor-pointer text-gray-600 hover:bg-primary hover:text-white '>
 
           <b>Personalization:</b>
 
