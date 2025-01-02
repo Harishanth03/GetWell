@@ -30,26 +30,31 @@ const Myprofile = () => {
       {
         isEdit ? 
 
-        <input className='w-full md:w-52 border sm:py-2 focus:border-primary focus:outline-none border-zinc-200 rounded-sm py-1 px-2 mt-2' value={userData.name} onChange={e => setUserData(prev => ({...prev , name:e.target.value}))} type="text" name="" id="" /> : <p>{userData.name}</p>
+        <input className='w-full md:w-52 border sm:py-2 focus:border-primary focus:outline-none border-zinc-200 rounded-sm py-1 px-2 mt-2' value={userData.name} onChange={e => setUserData(prev => ({...prev , name:e.target.value}))} type="text" name="" id="" /> : <p className='text-primary font-semibold text-center'><span className='text-black'>Hello</span> {userData.name}</p>
       }
 
-      <hr />
+      <hr className='bg-zinc-400 h-[1px] border-none' />
 
-      <div>
+      <div className='flex flex-col gap-2 '>
 
-        <p>Contact Information</p>
+        <p className='text-black font-semibold'>Contact Information</p>
 
-        <div>
+        <div className='flex flex-col gap-2'>
 
           <p>Email: </p>
+
           <p>{userData.email}</p>
+
           <p>Phone: </p>
           {
             isEdit ? <input value={userData.phone} onChange={e => setUserData(prev => ({...prev , phone:e.target.value}))} type="text" name="" id="" /> : <p>{userData.phone}</p>
           }
+
           <p>Address:</p>
+
           {
             isEdit ? 
+            
             <p>
 
               <input onChange={(e) => setUserData(prev => ({...prev.address , line1 : e.target.value}))} value={userData.address.line1} type="text" />
