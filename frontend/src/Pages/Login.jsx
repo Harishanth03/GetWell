@@ -8,6 +8,8 @@ const Login = () => {
 
   const [name , setname] = useState(''); // create the password state variable
 
+  const [password , setPassword] = useState(''); // create the password state variable
+
   // ================================================== ONSUBMIT FUNCTION ====================================================
 
   const onSubmit = async(e) => {
@@ -21,30 +23,30 @@ const Login = () => {
 
     <form action="" className='min-h-[80vh] flex items-center'>
 
-      <div className='flex flex-col gap-4 items-start m-auto p-6 min-w-[300px] sm:min-w-96 rounded-xl border border-gray-100 text-zinc-600 text-sm shadow-lg '>
+      <div className='flex flex-col gap-4 m-auto p-6 min-w-[300px] sm:min-w-96 rounded-xl border border-gray-100 text-zinc-600 text-sm shadow-lg '>
 
-        <p className=''>{state === 'Sign Up' ? 'Create Account' : 'LogIn'}</p>
+        <p className='text-2xl font-semibold text-center'>{state === 'Sign Up' ? 'Create Account' : 'LogIn'}</p>
 
-        <p>Please {state === 'Sign Up' ? 'Sign Up' : 'LogIn'} To Book</p>
+        <p className='text-center text-primary font-medium'>Please {state === 'Sign Up' ? 'Sign Up' : 'LogIn'} To Book</p>
 
-        <div>
+        <div className='w-full'>
 
           <p htmlFor="fullName">Full Name</p>
-          <input id='fullName' value={name} onChange={() => setname(e.target.name)} type="text" required/>
+          <input className='w-full border border-zinc-200 rounded-sm py-1 px-2 mt-1' id='fullName' value={name} onChange={() => setname(e.target.name)} type="text" required/>
 
         </div>
 
-        <div>
+        <div className='w-full'>
 
           <p htmlFor="Email">Email</p>
-          <input id='Email' value={email} onChange={() => setname(e.target.name)} type="email" required/>
+          <input className='w-full border border-zinc-200 rounded-sm py-1 px-2 mt-1'  id='Email' value={email} onChange={() => setEmail(e.target.name)} type="email" required/>
           
         </div>
 
-        <div>
+        <div className='w-full'>
 
           <p htmlFor="Password">Password</p>
-          <input id='Password' value={name} onChange={() => setname(e.target.name)} type="password" required/>
+          <input className='w-full border border-zinc-200 rounded-sm py-1 px-2 mt-1'   id='Password' value={name} onChange={() => setPassword(e.target.name)} type="password" required/>
           
         </div>
 
