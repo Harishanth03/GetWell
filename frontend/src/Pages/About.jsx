@@ -13,9 +13,9 @@ const About = () => {
 
       </div>
 
-      <div className='flex flex-col md:flex-row gap-12'>
+      <div className='flex flex-col md:flex-row gap-12 mt-5'>
 
-        <img src={assets.about_image} alt="" />
+        <img className='w-full md:max-w-[360px] rounded-md' src={assets.about_image} alt="" />
 
         <div>
 
