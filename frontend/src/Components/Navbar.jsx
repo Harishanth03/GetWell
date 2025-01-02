@@ -109,15 +109,15 @@ const Navbar = () => {
 
                 </div>
 
-                <ul className='flex flex-col items-center gap-5 mt-5 px-5 text-lg  font-medium'>
+                <ul className='flex flex-col items-center gap-5 mt-5 px-5 text-base font-normal'>
 
-                    <NavLink className='px-4 py-2 rounded inline-block' onClick={() => setShowMenu(false)} to={'/'}>Home</NavLink>
+                    <NavLink  onClick={() => setShowMenu(false)} to={'/'}><p className='px-4 py-2 rounded inline-block'>Home</p></NavLink>
 
-                    <NavLink className='px-4 py-2 rounded inline-block' onClick={() => setShowMenu(false)} to={'doctors'}>All Doctors</NavLink>
+                    <NavLink  onClick={() => setShowMenu(false)} to={'doctors'}><p className='px-4 py-2 rounded inline-block'>All Doctors</p></NavLink>
 
-                    <NavLink className='px-4 py-2 rounded inline-block' onClick={() => setShowMenu(false)} to={'/about'}>About Us</NavLink>
+                    <NavLink  onClick={() => setShowMenu(false)} to={'/about'}><p className='px-4 py-2 rounded inline-block'>About Us</p></NavLink>
 
-                    <NavLink className='px-4 py-2 rounded inline-block' onClick={() => setShowMenu(false)} to={'/contact'}>Contact</NavLink>
+                    <NavLink  onClick={() => setShowMenu(false)} to={'/contact'}><p className='px-4 py-2 rounded inline-block'>Contact</p></NavLink>
 
                 </ul>
 
