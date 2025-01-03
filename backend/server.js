@@ -4,6 +4,8 @@ import cors from 'cors';
 
 import dotenv from 'dotenv';
 
+import connectCloudinary from './config/Cloudinary.js';
+
 dotenv.config();
 
 import connectDatabase from './config/mongooDb.js';
@@ -16,15 +18,13 @@ const PORT = process.env.PORT || 4000;
 
 connectDatabase();
 
+connectCloudinary();
+
 //================================================ Middleware ================================================
 
 app.use(express.json());
 
 app.use(cors());
-
-//================================================ DB Config ================================================
-
-
 
 //================================================ API Endpoints ================================================
 
