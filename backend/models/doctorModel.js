@@ -20,7 +20,7 @@ const doctorSchema = new mongoose.Schema(
 
         about : {type : String , required : true},
 
-        available : {type : Boolean , required : true},
+        available : {type : Boolean , default:true},
 
         fees : {type : Number , required : true},
 
