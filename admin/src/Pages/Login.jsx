@@ -2,6 +2,9 @@ import React, { useContext,  useState } from 'react'
 
 import { AdminContext } from '../Context/AdminContext';
 
+import axios from 'axios'
+import { toast } from 'react-toastify';
+
 const Login = () => {
 
   const [state , setState ] = useState('Admin');
@@ -16,6 +19,32 @@ const Login = () => {
   const onSubmitHandler = async(event) => {
 
     event.preventDefault();
+
+    if(state === 'Admin')
+    {
+      
+      const {data} = await axios.post(backendURL + '/api/admin/login' , {email , password})
+
+      if(data.success)
+      {
+
+        localStorage.setItem('aToken' , data.token)
+
+        setAdminToken(data.token);
+
+      }
+      else
+      {
+        toast.error(data.message);
+      }
+
+    }
+    else
+    {
+
+
+
+    }
 
   }
 
