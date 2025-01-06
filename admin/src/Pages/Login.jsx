@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+
+  const [state , setState ] = useState('Admin');
+
   return (
-    <div>Login</div>
+
+    <form>
+
+      <div>
+
+        <p><span>{state}</span> Login</p>
+
+      </div>
+      
+    </form>
+    
   )
+
 }
 
 export default Login
