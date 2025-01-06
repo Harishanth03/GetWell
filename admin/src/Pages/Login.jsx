@@ -30,6 +30,10 @@ const Login = () => {
 
         <button className='bg-primary text-white w-full py-2 rounded-md mt-1 text-md'>Login</button>
 
+        {
+          state === "Admin" ? <p>Doctor Login</p> : <p>Admin logIn</p>
+        }
+
       </div>
       
     </form>
