@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+
+import { AdminContext } from '../Context/AdminContext';
 
 const Login = () => {
 
   const [state , setState ] = useState('Admin');
+
+  const {setAdminToken , backendURL} = useContext(AdminContext);
+
+
   
 
   return (
