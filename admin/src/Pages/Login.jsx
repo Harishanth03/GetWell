@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext,  useState } from 'react'
 
 import { AdminContext } from '../Context/AdminContext';
 
@@ -8,14 +8,18 @@ const Login = () => {
 
   const {setAdminToken , backendURL} = useContext(AdminContext);
 
+  const [email , setEmail] = useState('');
+
+  const [password , setPassword] = useState('');
 
   
+
 
   return (
 
     <form className='min-h-[80vh] flex items-center justify-center'>
 
-      <div className='flex flex-col gap-3 m-auto md:items-start p-8 m-w-[320px] sm:min-w-96 border rounded-xl text-[#5E5E5E]text-sm shadow-lg'>
+      <div className='flex flex-col gap-3 m-auto md:items-start p-8 m-w-[340px] md:min-w-96 border rounded-xl text-[#5E5E5E]text-sm shadow-lg'>
 
         <p className='text-2xl text-center m-auto font-semibold'><span className='text-primary'>{state}</span> Login</p>
 
@@ -23,7 +27,7 @@ const Login = () => {
 
           <p>Email</p>
 
-          <input className='border border-[#DADADA] rounded w-full p-1 mt-1 outline-primary' type="email"  required/>
+          <input onChange={(e) => setEmail(e.target.value)} value={email} className='border border-[#DADADA] rounded w-full p-1 mt-1 outline-primary' type="email"  required/>
 
         </div>
 
@@ -31,7 +35,7 @@ const Login = () => {
 
           <p>Password</p>
           
-          <input className='border border-[#DADADA] rounded w-full p-1 mt-1 outline-primary' type="email"  required/>
+          <input onChange={(e) => setPassword(e.target.value)} value={password} className='border border-[#DADADA] rounded w-full p-1 mt-1 outline-primary' type="email"  required/>
 
         </div>
 
