@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Login from './Pages/Login'
 import { ToastContainer, toast } from 'react-toastify';
+import { AdminContext } from './Context/AdminContext';
 
 const App = () => {
-  return (
-    <div>
 
-      <Login/>
+  const {Admintoken} = useContext(AdminContext);
+
+  return Admintoken ? (
+
+    <div>
 
       <ToastContainer/>
       
     </div>
+
+  ) : (
+
+    <>
+
+      <Login/>
+
+      <ToastContainer/>
+    
+    </>
   )
+
 }
 
 export default App
