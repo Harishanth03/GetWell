@@ -6,11 +6,11 @@ const Login = () => {
 
   return (
 
-    <form>
+    <form className='min-h-[80vh] flex items-center'>
 
-      <div>
+      <div className='flex flex-col gap-3 m-auto md:items-start p-8 m-w-[320px] sm:min-w-96 border rounded-xl text-[#5E5E5E]text-sm shadow-lg'>
 
-        <p><span>{state}</span> Login</p>
+        <p className='text-2xl text-center m-auto font-semibold'><span>{state}</span> Login</p>
 
         <div>
 
