@@ -15,7 +15,11 @@ const App = () => {
 
       <ToastContainer/>
       <Navbar/>
-      <Sidebar/>
+      <div className='flex items-start'>
+
+        <Sidebar/>
+
+      </div>
       
     </div>
 
