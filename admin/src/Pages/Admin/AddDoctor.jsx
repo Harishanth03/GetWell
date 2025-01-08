@@ -10,53 +10,53 @@ const AddDoctor = () => {
 
       <div className='bg-white border px-8 py-8 rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll'>
 
-        <div>
+        <div className='flex items-center gap-4 mb-8 text-gray-500'>
 
           <label htmlFor="upload-area">
 
-            <img src={assets.upload_area} />
+            <img className='w-16 bg-gray-100 rounded-full cursor-pointer' src={assets.upload_area} />
 
           </label>
 
-          <input type="file" hidden id="upload-area" />
+          <input  type="file" hidden id="upload-area" />
 
           <p>Upload doctor<br/>picture</p>
 
         </div>
 
-        <div>
+        <div className='flex flex-col lg:flex-row items-start gap-10 text-gray-600'>
 
-          <div>
+          <div className='w-full lg:flex-1 flex flex-col gap-4'>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
-              <p>Your Name</p>
+              <p>Doctor Name</p>
 
-              <input type="text" id="" placeholder='Your Name' required/>
+              <input className='border rounded px-3 py-2' type="text" id="" placeholder='Your Name' required/>
 
             </div>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
               <p>Doctor Email</p>
 
-              <input type="email" id="" placeholder='Doctor Email' required/>
+              <input className='border rounded px-3 py-2' type="email" id="" placeholder='Doctor Email' required/>
 
             </div>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
               <p>Doctor Password</p>
 
-              <input type="password" id="" placeholder='Doctor Password' required/>
+              <input className='border rounded px-3 py-2' type="password" id="" placeholder='Doctor Password' required/>
 
             </div>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
               <p>Doctor Experience</p>
 
-              <select id="experience">
+              <select className='border rounded px-3 py-2' id="experience">
 
                 <option value="1-Year">1-Year</option>
                 <option value="2-Years">2-Years</option>
@@ -73,23 +73,23 @@ const AddDoctor = () => {
 
             </div>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
               <p>Doctor Fee</p>
 
-              <input type="number" id="" placeholder='Doctor Fee' required/>
+              <input className='border rounded px-3 py-2' type="number" id="" placeholder='Doctor Fee' required/>
 
             </div>
 
           </div>
 
-          <div>
+          <div className='w-full lg:flex-1 flex flex-1 flex-col gap-4'>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
               <p htmlFor="speciality" >Speciality</p>
 
-              <select  id="speciality">
+              <select className='border rounded px-3 py-2'  id="speciality">
 
                 <option value="General physician">General physician</option>
                 <option value="Gynecologist">Gynecologist</option>
@@ -102,21 +102,21 @@ const AddDoctor = () => {
 
             </div>
 
-            <div>
+            <div className='flex-1 flex flex-col gap-1'>
 
               <p>Education</p>
 
-              <input type="text" id="" placeholder='Education' required/>
+              <input className='border rounded px-3 py-2' type="text" id="" placeholder='Education' required/>
 
             </div>
 
-            <div>
+            <div  className='flex-1 flex flex-col gap-2'>
 
               <p>Address</p>
 
-              <input type="text" id="" placeholder='Address ' required/>
+              <input className='border rounded px-3 py-2' type="text" id="" placeholder='Address 1' required/>
 
-              <input type="text" placeholder='Address 2'/>
+              <input className='border rounded px-3 py-2' type="text" placeholder='Address 2'/>
 
             </div>
 
@@ -126,13 +126,13 @@ const AddDoctor = () => {
 
         <div>
 
-          <p>About Doctor</p>
+          <p className='mt-4 mb-2'>About Doctor</p>
 
-          <textarea  id="" placeholder='About Doctor' required/>
+          <textarea className='w-full px-4 pt-2 border rounded' id="" placeholder='About Doctor' required/>
 
         </div>
 
-        <button>Add Doctor</button>
+        <button className='bg-primary w-full px-10 py-3 mt-4 text-white rounded'>Add Doctor</button>
 
       </div>
 
