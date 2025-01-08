@@ -8,7 +8,8 @@ const Navbar = () => {
 
     const logOut = () => {
 
-        atoken && setatoken(localStorage.removeItem('atoken'));
+        atoken && setatoken("");
+        atoken && setatoken(localStorage.removeItem('atoken'))
     }
 
   return (
@@ -23,7 +24,7 @@ const Navbar = () => {
 
         </div>
 
-        <button onClick={() => logOut} className='bg-primary text-white text-sm px-10 py-2 rounded-full'>Logout</button>
+        <button onClick={logOut} className='bg-primary text-white text-sm px-10 py-2 rounded-full'>Logout</button>
 
     </div>
   )
