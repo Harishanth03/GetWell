@@ -3,6 +3,7 @@ import Login from './Pages/Login'
 import { ToastContainer, toast } from 'react-toastify';
 import { AdminContext } from './Context/AdminContext';
 import Navbar from './Components/Navbar';
+import Sidebar from './Components/Sidebar';
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
 
       <ToastContainer/>
       <Navbar/>
+      <Sidebar/>
       
     </div>
 
