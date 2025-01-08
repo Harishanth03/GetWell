@@ -1,8 +1,19 @@
 import React from 'react'
+import { assets } from '../assets/assets'
 
 const Navbar = () => {
+
   return (
-    <div>Navbar</div>
+
+    <div>
+
+        <div>
+
+            <img src={assets.logo}/>
+            
+        </div>
+
+    </div>
   )
 }
 
