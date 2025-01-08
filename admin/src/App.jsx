@@ -4,6 +4,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import { AdminContext } from './Context/AdminContext';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
+import {Route , Routes} from 'react-router-dom'
+import AddDoctor from './Pages/Admin/AddDoctor';
+import AllAppointments from './Pages/Admin/AllAppointments';
+import Dashboard from './Pages/Admin/Dashboard';
+import DocotorsList from './Pages/Admin/DocotorsList';
 
 const App = () => {
 
@@ -14,8 +19,28 @@ const App = () => {
     <div className='bg-[#F8F9FD]'>
 
       <ToastContainer/>
+
       <Navbar/>
-      <Sidebar/>
+      
+      <div className='flex items-start'>
+
+        <Sidebar/>
+
+        <Routes>
+
+          <Route path='/' element={<></>}/>
+
+          <Route path='/add-doctor' element={<AddDoctor/>}/>
+
+          <Route path='/all-appointment' element={<AllAppointments/>}/>
+
+          <Route path='/dashboard' element={<Dashboard/>}/>
+
+          <Route path='/doctor-list' element={<DocotorsList/>}/>
+
+        </Routes>
+
+      </div>
       
     </div>
 
