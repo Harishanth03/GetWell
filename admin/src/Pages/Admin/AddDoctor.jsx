@@ -4,11 +4,11 @@ import {assets} from '../../assets/assets.js'
 const AddDoctor = () => {
   return (
     
-    <form action="">
+    <form className='m-5 w-full'>
 
-      <p>Add Doctors</p>
+      <p className='mb-3 text-lg font-medium'>Add Doctors</p>
 
-      <div>
+      <div className='bg-white border px-8 py-8 rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll'>
 
         <div>
 
