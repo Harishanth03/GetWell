@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
 
-    <div className=''>
+    <div className='flex justify-between px-4 sm:px-10 py-3 border-b bg-white'>
 
         <div>
 
