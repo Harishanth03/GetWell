@@ -18,7 +18,7 @@ const Navbar = () => {
 
         </div>
 
-        <button>Logout</button>
+        <button className='bg-primary text-white text-sm px-10 py-2 rounded-full'>Logout</button>
 
     </div>
   )
