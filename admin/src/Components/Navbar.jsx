@@ -4,7 +4,12 @@ import { AdminContext } from '../Context/AdminContext'
 
 const Navbar = () => {
 
-    const {atoken} = useContext(AdminContext);
+    const {atoken , setatoken} = useContext(AdminContext);
+
+    const logOut = () => {
+
+        atoken && setatoken(localStorage.removeItem('atoken'));
+    }
 
   return (
 
@@ -18,7 +23,7 @@ const Navbar = () => {
 
         </div>
 
-        <button className='bg-primary text-white text-sm px-10 py-2 rounded-full'>Logout</button>
+        <button onClick={() => logOut} className='bg-primary text-white text-sm px-10 py-2 rounded-full'>Logout</button>
 
     </div>
   )
