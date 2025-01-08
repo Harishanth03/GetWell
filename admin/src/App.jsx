@@ -5,9 +5,9 @@ import { AdminContext } from './Context/AdminContext';
 
 const App = () => {
 
-  const {Admintoken} = useContext(AdminContext);
+  const {atoken} = useContext(AdminContext);
 
-  return Admintoken ? (
+  return atoken ? (
 
     <div>
 

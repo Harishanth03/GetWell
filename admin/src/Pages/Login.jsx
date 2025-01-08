@@ -9,7 +9,7 @@ const Login = () => {
 
   const [state , setState ] = useState('Admin');
 
-  const {setAdminToken , Admintoken , backendURL} = useContext(AdminContext);
+  const {setatoken , atoken , backendURL} = useContext(AdminContext);
 
   const [email , setEmail] = useState('');
 
@@ -28,11 +28,11 @@ const Login = () => {
       if(data.success)
       {
 
-        localStorage.setItem('AdminToken' , data.token)
+        localStorage.setItem('atoken' , data.token)
 
-        setAdminToken(data.token);
+        setatoken(data.token);
 
-        console.log(Admintoken);
+        console.log(atoken);
 
       }
       else
