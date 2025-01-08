@@ -2,7 +2,13 @@ import React from 'react'
 
 const AddDoctor = () => {
   return (
-    <div>AddDoctor</div>
+    
+    <form action="">
+
+      <p>Add Doctors</p>
+
+      
+    </form>
   )
 }
 
