@@ -75,7 +75,8 @@ const AdminContextProvider = props => {
         setatoken,
         backendURL,
         doctors,
-        getAllDoctors
+        getAllDoctors,
+        changeAvailablity
 
     }
 
