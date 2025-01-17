@@ -14,30 +14,30 @@ const registerUser = async(req , res) =>
         if(!email || !name || !password)
         {
 
-            res.json({success:false , message:"Plase fill the user Data"});
+           return res.json({success:false , message:"Plase fill the user Data"});
 
         }
 
         if(!validator.isEmail(email))
         {
 
-            res.json({success: false , message: "Please enter a valid email"});
+           return res.json({success: false , message: "Please enter a valid email"});
 
         }
 
-        const exisitingEmail = await userModel.find(email);
+        const exisitingEmail = await userModel.findOne({email});
         
         if(exisitingEmail)
         {
 
-            res.json({success:false , message:"This Email address already have an account"});
+           return res.json({success:false , message:"This Email address already have an account"});
 
         }
 
         if(password.length < 8)
         {
 
-            res.json({success:false , message:"Please Enter a valid password"});
+           return res.json({success:false , message:"Please Enter a valid password"});
 
         }
 
