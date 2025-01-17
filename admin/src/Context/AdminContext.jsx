@@ -19,6 +19,8 @@ const AdminContextProvider = props => {
 
             const {data} = await axios.post(backendURL + '/api/admin/all-doctors', {} , {headers:{atoken}});
 
+            
+
             if(data.success)
             {
                 setDoctors(data.doctors)
@@ -43,7 +45,7 @@ const AdminContextProvider = props => {
         try 
         {
 
-            const {data} = await axios.post(backendURL  + 'api/admin/change-availablity' , {docId}, {Headers:{atoken}});
+            const {data} = await axios.post('http://localhost:4000/api/admin/change-availablity' , {docId} , {headers:{atoken}});
 
             if(data.success)
             {
