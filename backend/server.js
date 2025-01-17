@@ -12,6 +12,7 @@ import connectDatabase from './config/mongooDb.js';
 
 import adminRouter from './routes/adminRoute.js';
 import doctorRouter from './routes/doctorRoute.js';
+import userRouter from './routes/userRoute.js';
 
 //================================================ App Config ================================================
 
@@ -36,6 +37,8 @@ app.get('/', (req , res) => res.status(200).send('Server is running'));
 app.use('/api/admin' , adminRouter) //localhost:4000/api/admin/add-doctor
 
 app.use('/api/doctor' , doctorRouter);
+
+app.use('/api/user' , userRouter);
 
 //================================================ Listener ================================================
 
