@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 
 export const AppContext = createContext();
@@ -33,12 +34,17 @@ const AppContextProvider = props =>
                 setDoctor(data.doctors)
 
             }
+            else
+            {
+                toast.error(data.message)
+            }
 
         }
         catch(error)
         {
 
             console.log(error)
+            toast.error(error.message)
 
         }
     }
