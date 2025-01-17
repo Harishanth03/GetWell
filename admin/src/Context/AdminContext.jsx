@@ -36,6 +36,23 @@ const AdminContextProvider = props => {
         }
     }
 
+    //=============================================== change available =============================================
+
+    const changeAvailablity = async(docId) => {
+
+        try 
+        {
+
+            const {data} = await axios.post(backendURL)
+            
+        } catch (error) 
+        {
+
+            toast.error(error.message)
+            
+        }
+    }
+
     const value = {
 
         atoken,
