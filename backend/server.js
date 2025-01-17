@@ -11,6 +11,7 @@ dotenv.config();
 import connectDatabase from './config/mongooDb.js';
 
 import adminRouter from './routes/adminRoute.js';
+import doctorRouter from './routes/doctorRoute.js';
 
 //================================================ App Config ================================================
 
@@ -33,6 +34,8 @@ app.use(cors());
 app.get('/', (req , res) => res.status(200).send('Server is running'));
 
 app.use('/api/admin' , adminRouter) //localhost:4000/api/admin/add-doctor
+
+app.use('/api/doctor' , doctorRouter);
 
 //================================================ Listener ================================================
 

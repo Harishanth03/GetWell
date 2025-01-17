@@ -19,6 +19,8 @@ const AdminContextProvider = props => {
 
             const {data} = await axios.post(backendURL + '/api/admin/all-doctors', {} , {headers:{atoken}});
 
+            
+
             if(data.success)
             {
                 setDoctors(data.doctors)
@@ -43,7 +45,23 @@ const AdminContextProvider = props => {
         try 
         {
 
-            const {data} = await axios.post(backendURL)
+            const {data} = await axios.post('http://localhost:4000/api/admin/change-availablity' , {docId} , {headers:{atoken}});
+
+            if(data.success)
+            {
+
+                toast.success(data.message);
+
+                getAllDoctors();
+
+            }
+            else
+            {
+
+                toast.error(data.message);
+
+            }
+
             
         } catch (error) 
         {
@@ -59,7 +77,8 @@ const AdminContextProvider = props => {
         setatoken,
         backendURL,
         doctors,
-        getAllDoctors
+        getAllDoctors,
+        changeAvailablity
 
     }
 
