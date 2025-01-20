@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AppContext } from '../Context/AppContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -13,13 +13,13 @@ const Login = () => {
 
   const [password , setPassword] = useState(''); // create the password state variable
 
-  const {backendURL , token , setToken} = useState(AppContext)
+  const {backendURL , setToken} = useContext(AppContext)
 
   // ================================================== ONSUBMIT FUNCTION ====================================================
 
   const onSubmitHandler = async(e) => {
 
-    event.prevenDefault(); // prevent the default action of the form
+    e.preventDefault();
 
     try 
     {
@@ -37,11 +37,15 @@ const Login = () => {
 
             setToken(data.token);
 
+            setEmail('')
+
+            setPassword('');
+
           }
           else
           {
 
-            toast.error(data.message);
+            console.log(data.message);
 
           }
 
