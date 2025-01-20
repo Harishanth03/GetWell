@@ -14,10 +14,15 @@ const AppContextProvider = props =>
 
     const [doctors , setDoctor] = useState([]);
 
+    const [token , setToken] = useState(localStorage.getItem('token'));
+
     const value = {
 
         doctors,
-        currencySymbol
+        currencySymbol,
+        token,
+        setToken,
+        backendURL
 
     }
 
