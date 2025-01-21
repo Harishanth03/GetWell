@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../Context/AppContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -13,7 +14,20 @@ const Login = () => {
 
   const [password , setPassword] = useState(''); // create the password state variable
 
-  const {backendURL , setToken} = useContext(AppContext)
+  const {backendURL , setToken , token} = useContext(AppContext);
+
+  const Navigate = useNavigate();
+
+  useEffect(() => {
+
+    if(token)
+    {
+
+      Navigate('/');
+
+    }
+
+  } , [token])
 
   // ================================================== ONSUBMIT FUNCTION ====================================================
 
