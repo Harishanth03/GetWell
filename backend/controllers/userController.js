@@ -78,6 +78,26 @@ const userLogIn = async (req, res) => {
       console.error(error);
       return res.status(500).json({ success: false, message: "Server error" });
     }
+
+  };
+
+  //========================================= GET USER CONTROLLER ================================================
+
+  const getUser = async (req, res) => {
+
+    try 
+    {
+
+      const {userId} = req.body;
+
+      
+      
+    } catch (error) 
+    {
+
+
+      
+    }
   };
   
 
