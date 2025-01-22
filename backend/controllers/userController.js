@@ -93,14 +93,17 @@ const userLogIn = async (req, res) => {
       const userData = await userModel.findOne(userId).select('-password');
 
       res.json({success: true , userData});
+
       
     } catch (error) 
     {
 
+      console.error(error);
 
+      return res.status(500).json({ success: false, message: "Server error" });
       
     }
   };
   
 
-export {registerUser , userLogIn}
+export {registerUser , userLogIn , getUser}; //export the controllers
