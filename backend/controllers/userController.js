@@ -90,7 +90,9 @@ const userLogIn = async (req, res) => {
 
       const {userId} = req.body;
 
-      
+      const userData = await userModel.findOne(userId).select('-password');
+
+      res.json({success: true , userData});
       
     } catch (error) 
     {
