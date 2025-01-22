@@ -110,7 +110,7 @@ const userLogIn = async (req, res) => {
 
   //================================================== Get UserData ====================================================
 
-  const getUserData = async (req, res) => {
+  const updateProfile= async (req, res) => {
 
     try 
     {
@@ -145,10 +145,12 @@ const userLogIn = async (req, res) => {
     } catch (error) 
     {
 
+      console.error(error);
 
+      return res.status(500).json({ success: false, message: "Server error" });
       
     }
   }
   
 
-export {registerUser , userLogIn , getUser}; //export the controllers
+export {registerUser , userLogIn , getUser , updateProfile}; //export the controllers
