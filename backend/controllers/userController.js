@@ -138,6 +138,7 @@ const userLogIn = async (req, res) => {
         await userModel.findByIdAndUpdate(userId , {image:imageURL});
 
         res.status(200).json({success:true , message:'User data updated'});
+        
       }
 
       await userModel.findByIdAndUpdate(userId , {name , email , address:JSON.parse(address) , phone , dob, gender})
