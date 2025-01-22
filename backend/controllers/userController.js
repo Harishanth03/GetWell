@@ -2,6 +2,8 @@ import validator from 'validator'
 import userModel from '../models/userModel.js';
 import bcrypt  from 'bcrypt';
 import jwt from 'jsonwebtoken'
+import { json } from 'express';
+import {v2 as cloudinary} from 'cloudinary';
 
 const registerUser = async (req, res) => {
     try {
@@ -90,7 +92,7 @@ const userLogIn = async (req, res) => {
 
       const {userId} = req.body;
 
-      const userData = await userModel.findOne(userId).select('-password');
+      const userData = await userModel.findOne({_id:userId}).select('-password');
 
       res.json({success: true , userData});
 
@@ -103,7 +105,50 @@ const userLogIn = async (req, res) => {
       return res.status(500).json({ success: false, message: "Server error" });
       
     }
+
   };
+
+  //================================================== Get UserData ====================================================
+
+  const getUserData = async (req, res) => {
+
+    try 
+    {
+
+      const {userId , name , email , address , dob , gender , phone} = req.body;
+
+      const imageFile = req.file;
+
+      if(!name , !email , !address , !phone , !dob , !gender)
+      {
+
+        return res.status(401).json({success: false , message: "Please fill in all fields"});
+
+      }
+
+      if(imageFile)
+      {
+
+        //upload image to cloudinary
+
+        const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type:'image'});
+
+        const imageURL = imageUpload.secure_url;
+
+        await userModel.findByIdAndUpdate(userId , {image:imageURL});
+
+        res.status(200).json({success:true , message:'User data updated'});
+      }
+
+      await userModel.findByIdAndUpdate(userId , {name , email , address:JSON.parse(address) , phone , dob, gender})
+      
+    } catch (error) 
+    {
+
+
+      
+    }
+  }
   
 
 export {registerUser , userLogIn , getUser}; //export the controllers
