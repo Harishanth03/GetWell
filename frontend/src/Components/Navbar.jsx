@@ -19,6 +19,8 @@ const Navbar = () => {
 
         localStorage.removeItem('token');
 
+        navigate('/')
+
     }
 
     const toggleMenu = () => {
@@ -92,7 +94,7 @@ const Navbar = () => {
 
                             <p onClick={() => navigate('/my-appointments')} className='hover:text-black'>My Appointment</p>
 
-                            <p onClick={() => logOut} className='hover:text-black'>Logout</p>
+                            <p onClick={logOut} className='hover:text-black'>Logout</p>
 
                         </div>
 
